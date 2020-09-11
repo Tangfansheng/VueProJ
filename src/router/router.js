@@ -2,25 +2,25 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
+import Welcome from '@/components/Welcome'
+import Users from '@/components/user/Users'
+
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    redirect: '/login'
-  },
-  {
-    path: '/login',
-    component: Login
-  },
-  {
-    path: '/home',
-    component: Home
-  }
-]
-
 const router = new VueRouter({
-  routes
+  routes: [
+    { path: '/', redirect: '/login' },
+    { path: '/login', component: Login },
+    {
+      path: '/home',
+      component: Home,
+      redirect: '/welcome',
+      children: [
+        { path: '/welcome', component: Welcome },
+        { path: '/users', component: Users }
+      ]
+    }
+  ]
 })
 
 // 挂载路由导航守卫 如果没有token强制到登录页  这种实现方式问题很大！如果token过期了咋办
@@ -28,8 +28,8 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.path === '/login') return next()
   // 获取token
-  const tokenstr = window.sessionStorage.getItem('token')
-  if (!tokenstr) return next('/login')
+  const tokenStr = window.sessionStorage.getItem('token')
+  if (!tokenStr) return next('/login')
   next()
 })
 
