@@ -5,7 +5,9 @@ import './plugin/element'
 import './assets/css/ global.css'
 import './assets/icon/iconfont.css'
 import axios from 'axios'
+import echarts from 'echarts'
 
+Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 // 请求的基准路径

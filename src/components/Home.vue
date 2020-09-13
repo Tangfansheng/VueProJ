@@ -144,16 +144,6 @@ export default {
           }]
         },
         {
-          id: 6,
-          name: '养生开关',
-          children: [{
-            id: 1,
-            name: '远程开关',
-            path: '/remoteController',
-            children: []
-          }]
-        },
-        {
           id: 7,
           name: '用户管理',
           children: [{
@@ -168,7 +158,7 @@ export default {
       activePath: ''
     }
   },
-  // 钩子函数 一定会运行
+  // 钩子函数
   created () {
     this.activePath = window.sessionStorage.getItem('activePath')
   },
