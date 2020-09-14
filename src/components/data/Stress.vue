@@ -2,7 +2,7 @@
   <el-container>
     <el-aside width="500px">
       <span class="demonstration"></span>
-      <el-image :src="require('@/assets/image/front_derrick.png')" align="center"></el-image>
+      <el-image :src="require('@/assets/image/main_truss.png')" align="center"></el-image>
     </el-aside>
     <el-container class="right-container">
       <el-main>
@@ -16,11 +16,11 @@
             stripe
             style="width: 100%">
             <el-table-column label="日期" prop="datetime"></el-table-column>
-            <el-table-column label="测点1" prop="force1"></el-table-column>
-            <el-table-column label="测点2" prop="force2"></el-table-column>
-            <el-table-column label="测点3" prop="force3"></el-table-column>
-            <el-table-column label="测点4" prop="force4"></el-table-column>
-            <el-table-column label="测点5" prop="force5"></el-table-column>
+            <el-table-column label="上平杆" prop="upper"></el-table-column>
+            <el-table-column label="前斜杆" prop="front"></el-table-column>
+            <el-table-column label="立柱" prop="mid"></el-table-column>
+            <el-table-column label="后拉杆" prop="rear"></el-table-column>
+            <el-table-column label="下平杆" prop="bottom"></el-table-column>
           </el-table>
         </div>
       </el-main>
@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  name: 'Derrick',
+  name: 'Stress',
   data () {
     return {
       tableData: [],
@@ -46,27 +46,20 @@ export default {
   },
   methods: {
     async update () {
-      const { data: res } = await this.$http.get('derrick/recent?vue=true')
-      console.log(res)
-      if (res.map.code !== 200) {
-        return this.$message.error('获取最新数据失败！')
-      }
-      this.tableData = res.map.data
-      console.log(this.tableData)
+      const { data: res } = await this.$http.get('stress/recent?vue=true')
+      this.tableData = res
       this.$message.success('更新最新数据成功！')
     },
 
     async updateChart () {
-      const { data: _xAxis } = await this.$http.get('derrick/xAxis')
-      const { data: _wrappedData } = await this.$http.get('derrick/wrappedData')
+      const { data: _xAxis } = await this.$http.get('stress/xAxis')
+      const { data: _wrappedData } = await this.$http.get('stress/wrappedData')
       var datetimes = []
       for (var i = 0; i < _xAxis.length; i++) {
         datetimes[i] = _xAxis[i].datetime
       }
       this.chartDateTime = datetimes
       this.chartData = _wrappedData
-      console.log(this.chartDateTime)
-      console.log(this.chartData)
       this.myEcharts()
     },
 
@@ -82,7 +75,7 @@ export default {
           trigger: 'axis'
         },
         legend: {
-          data: ['测点1', '测点2', '测点3', '测点4', '测点5']
+          data: ['上平杆', '前斜杆', '立柱', '后拉杆', '下平杆']
         },
         grid: {
           left: '3%',

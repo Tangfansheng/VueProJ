@@ -6,7 +6,8 @@ import Welcome from '@/components/Welcome'
 import Users from '@/components/user/Users'
 import Anchor from '@/components/data/Anchor'
 import Derrick from '@/components/data/Derrick'
-
+import Stress from '@/components/data/Stress'
+import Basket from '@/components/data/Basket'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -21,7 +22,9 @@ const router = new VueRouter({
         { path: '/welcome', component: Welcome },
         { path: '/users', component: Users },
         { path: '/anchor', component: Anchor },
-        { path: '/derrick', component: Derrick }
+        { path: '/derrick', component: Derrick },
+        { path: '/stress', component: Stress },
+        { path: '/putdown', component: Basket }
       ]
     }
   ]

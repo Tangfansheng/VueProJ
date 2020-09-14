@@ -11,7 +11,7 @@ Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 // 请求的基准路径
-axios.defaults.baseURL = 'http://127.0.0.1:8081/'
+axios.defaults.baseURL = 'http://120.26.187.166:8080/XTBridge'
 axios.interceptors.request.use(config => {
   // 挂载请求头token
   config.headers.Authorization = window.sessionStorage.getItem('token')
