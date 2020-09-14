@@ -144,7 +144,7 @@ export default {
           }]
         },
         {
-          id: 7,
+          id: 6,
           name: '用户管理',
           children: [{
             id: 1,
@@ -178,7 +178,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="less" scoped>

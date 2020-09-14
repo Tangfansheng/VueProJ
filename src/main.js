@@ -6,7 +6,11 @@ import './assets/css/ global.css'
 import './assets/icon/iconfont.css'
 import axios from 'axios'
 import echarts from 'echarts'
+import VideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
+import 'videojs-flash'
 
+Vue.use(VideoPlayer)
 Vue.prototype.$echarts = echarts
 Vue.config.productionTip = false
 Vue.prototype.$http = axios

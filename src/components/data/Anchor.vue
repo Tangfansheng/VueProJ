@@ -48,12 +48,12 @@ export default {
   methods: {
     async update () {
       const { data: res } = await this.$http.get('anchor/recent?vue=true')
-      console.log(res)
+      // console.log(res)
       if (res.map.code !== 200) {
         return this.$message.error('获取最新数据失败！')
       }
       this.tableData = res.map.data
-      console.log(this.tableData)
+      // console.log(this.tableData)
       this.$message.success('更新最新数据成功！')
     },
 
@@ -66,8 +66,8 @@ export default {
       }
       this.chartDateTime = datetimes
       this.chartData = _wrappedData
-      console.log(this.chartDateTime)
-      console.log(this.chartData)
+      // console.log(this.chartDateTime)
+      // console.log(this.chartData)
       this.myEcharts()
     },
 

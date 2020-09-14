@@ -59,8 +59,8 @@ export default {
       }
       this.chartDateTime = datetimes
       this.chartData = _wrappedData
-      console.log(this.chartDateTime)
-      console.log(this.chartData)
+      // console.log(this.chartDateTime)
+      // console.log(this.chartData)
       this.myEcharts()
     },
 

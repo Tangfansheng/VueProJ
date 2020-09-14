@@ -7,7 +7,13 @@ import Users from '@/components/user/Users'
 import Anchor from '@/components/data/Anchor'
 import Derrick from '@/components/data/Derrick'
 import Stress from '@/components/data/Stress'
-import Basket from '@/components/data/Basket'
+import Basket from '@/components/sync/Basket'
+import Bottom from '@/components/video/Bottom'
+import Overall from '@/components/video/Overall'
+import Side from '@/components/video/Side'
+import Environment from '@/components/env/Environment'
+import WalkSync from '@/components/sync/WalkSync'
+
 Vue.use(VueRouter)
 
 const router = new VueRouter({
@@ -24,7 +30,12 @@ const router = new VueRouter({
         { path: '/anchor', component: Anchor },
         { path: '/derrick', component: Derrick },
         { path: '/stress', component: Stress },
-        { path: '/putdown', component: Basket }
+        { path: '/putdown', component: Basket },
+        { path: '/overall', component: Overall },
+        { path: '/side', component: Side },
+        { path: '/bottom', component: Bottom },
+        { path: '/env', component: Environment },
+        { path: '/walkSync', component: WalkSync }
       ]
     }
   ]
