@@ -1,8 +1,7 @@
 <template>
   <el-container>
     <el-aside width="500px">
-      <span class="demonstration"></span>
-      <el-image :src="require('@/assets/image/rear_anchor.png')" align="center"></el-image>
+        <el-image  :src="require('@/assets/image/rear_anchor.png')" align="middle" ></el-image>
     </el-aside>
     <el-container class="right-container">
       <el-main>
