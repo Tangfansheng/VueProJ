@@ -28,7 +28,7 @@ export default {
         html5: { hls: { withCredentials: false } },
         sources: [{ // 流配置，数组形式，会根据兼容顺序自动切换
           type: 'rtmp/hls',
-          src: 'rtmp://58.200.131.2:1935/livetv/cctv13'
+          src: 'rtmp://120.26.187.166:1935/myapp/hiki'
         }],
         poster: '', // 你的封面地址
         // width: document.documentElement.clientWidth,

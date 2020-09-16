@@ -13,11 +13,15 @@ import Overall from '@/components/video/Overall'
 import Side from '@/components/video/Side'
 import Environment from '@/components/env/Environment'
 import WalkSync from '@/components/sync/WalkSync'
+import Error from '@/components/error/404'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
+  mode: 'history',
+  base: '/VueProJ/',
   routes: [
+    { path: '*', component: Error },
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
     {
