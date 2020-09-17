@@ -51,7 +51,7 @@ export default {
     },
 
     async updateChart () {
-      const { data: _xAxis } = await this.$http.get('basket/xAxis')
+      const { data: _xAxis } = await this.$http.get('basket/10date')
       const { data: _wrappedData } = await this.$http.get('basket/wrappedData')
       var datetimes = []
       for (var i = 0; i < _xAxis.length; i++) {

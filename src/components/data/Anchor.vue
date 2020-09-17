@@ -58,8 +58,9 @@ export default {
     },
 
     async updateChart () {
-      const { data: _xAxis } = await this.$http.get('anchor/xAxis')
+      const { data: _xAxis } = await this.$http.get('anchor/10date')
       const { data: _wrappedData } = await this.$http.get('anchor/wrappedData')
+      console.log(_xAxis)
       var datetimes = []
       for (var i = 0; i < _xAxis.length; i++) {
         datetimes[i] = _xAxis[i].datetime
