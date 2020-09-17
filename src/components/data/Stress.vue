@@ -52,7 +52,7 @@ export default {
     },
 
     async updateChart () {
-      const { data: _xAxis } = await this.$http.get('stress/xAxis')
+      const { data: _xAxis } = await this.$http.get('stress/10date')
       const { data: _wrappedData } = await this.$http.get('stress/wrappedData')
       var datetimes = []
       for (var i = 0; i < _xAxis.length; i++) {
