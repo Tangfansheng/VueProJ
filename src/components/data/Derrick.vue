@@ -21,6 +21,7 @@
             <el-table-column label="测点3" prop="force3"></el-table-column>
             <el-table-column label="测点4" prop="force4"></el-table-column>
             <el-table-column label="测点5" prop="force5"></el-table-column>
+            <el-table-column label="测点6" prop="force6"></el-table-column>
           </el-table>
         </div>
       </el-main>
@@ -82,7 +83,7 @@ export default {
           trigger: 'axis'
         },
         legend: {
-          data: ['测点1', '测点2', '测点3', '测点4', '测点5']
+          data: ['测点1', '测点2', '测点3', '测点4', '测点5', '测点6']
         },
         grid: {
           left: '3%',
