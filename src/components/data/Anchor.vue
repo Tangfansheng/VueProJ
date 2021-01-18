@@ -47,7 +47,6 @@ export default {
   methods: {
     async update () {
       const { data: res } = await this.$http.get('anchor/recent?vue=true')
-      // console.log(res)
       if (res.map.code !== 200) {
         return this.$message.error('获取最新数据失败！')
       }

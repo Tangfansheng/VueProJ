@@ -1,6 +1,6 @@
 <template>
   <div class='hello-ezuikit-js'>
-    <div id='video-container' style='width:1000px;height:600px'></div>
+    <div id='video-container'></div>
   </div>
 </template>
 

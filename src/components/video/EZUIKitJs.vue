@@ -1,11 +1,25 @@
 <template>
-  <div class='hello-ezuikit-js'>
-    <div id='video-container' style='width:1000px;height:600px'></div>
-  </div>
+  <el-container>
+    <el-main>
+      <div class='hello-ezuikit-js'>
+        <div id='video-container'></div>
+      </div>
+    </el-main>
+    <el-footer>
+      <el-row>
+        <el-button type="primary" icon="el-icon-caret-top" circle @click="control(0)"></el-button>
+        <el-button type="primary" icon="el-icon-caret-bottom" circle @click="control(1)"></el-button>
+        <el-button type="primary" icon="el-icon-caret-left" circle @click="control(2)"></el-button>
+        <el-button type="primary" icon="el-icon-caret-right" circle @click="control(3)"></el-button>
+        <el-button type="danger" icon="el-icon-video-pause" circle @click="stop"></el-button>
+      </el-row>
+    </el-footer>
+  </el-container>
 </template>
 
 <script>
 import EZUIKit from 'ezuikit-js'
+import axios from 'axios'
 
 export default {
   name: 'Side',
@@ -15,6 +29,36 @@ export default {
     }
   },
   methods: {
+    control (direction) {
+      console.log(direction)
+      axios.post('https://open.ys7.com/api/lapp/device/ptz/start', {
+        accessToken: this.accessTk,
+        deviceSerial: 'C79361726',
+        channelNo: 1,
+        speed: 2,
+        direction: direction
+      })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
+    stop () {
+      console.log('stop...')
+      axios.post('https://open.ys7.com/api/lapp/device/ptz/stop', {
+        accessToken: this.accessTk,
+        deviceSerial: 'C79361726',
+        channelNo: 1
+      })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    },
     async updateTokenAndPlay () {
       const { data: res } = await this.$http.get('token')
       this.accessTk = res
@@ -37,3 +81,5 @@ export default {
 
 }
 </script>
+<style>
+</style>
