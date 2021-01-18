@@ -98,20 +98,32 @@ export default {
           children: [
             {
               id: 1,
-              name: '挂篮全局监控',
-              path: '/overall',
+              name: '挂篮监控1',
+              path: '/side1',
               children: []
             },
             {
               id: 2,
-              name: '挂篮侧模监控',
-              path: '/side',
+              name: '挂篮监控2',
+              path: '/side2',
               children: []
             },
             {
               id: 3,
-              name: '挂篮底篮监控',
-              path: '/bottom',
+              name: '挂篮监控3',
+              path: '/bottom1',
+              children: []
+            },
+            {
+              id: 4,
+              name: '挂篮监控4',
+              path: '/bottom2',
+              children: []
+            },
+            {
+              id: 5,
+              name: '挂篮全局监控',
+              path: '/overall',
               children: []
             }]
         },
@@ -123,12 +135,6 @@ export default {
               id: 1,
               name: '挂篮下放力监测',
               path: '/putDown',
-              children: []
-            },
-            {
-              id: 2,
-              name: '挂篮行走同步监控',
-              path: '/walkSync',
               children: []
             }
           ]

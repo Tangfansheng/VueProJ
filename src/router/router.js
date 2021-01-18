@@ -2,17 +2,17 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
-import Welcome from '@/components/Welcome'
 import Users from '@/components/user/Users'
 import Anchor from '@/components/data/Anchor'
 import Derrick from '@/components/data/Derrick'
 import Stress from '@/components/data/Stress'
 import Basket from '@/components/sync/Basket'
-import Bottom from '@/components/video/Bottom'
-import Overall from '@/components/video/Overall'
-import Side from '@/components/video/Side'
+import Bottom1 from '@/components/video/video1'
+import Bottom2 from '@/components/video/video3'
+import Side1 from '@/components/video/video2'
+import Side2 from '@/components/video/video4'
+import Ball from '@/components/video/video'
 import Environment from '@/components/env/Environment'
-import WalkSync from '@/components/sync/WalkSync'
 import Error from '@/components/error/404'
 
 Vue.use(VueRouter)
@@ -27,19 +27,20 @@ const router = new VueRouter({
     {
       path: '/home',
       component: Home,
-      redirect: '/welcome',
+      redirect: '/derrick',
       children: [
-        { path: '/welcome', component: Welcome },
         { path: '/users', component: Users },
         { path: '/anchor', component: Anchor },
         { path: '/derrick', component: Derrick },
         { path: '/stress', component: Stress },
         { path: '/putdown', component: Basket },
-        { path: '/overall', component: Overall },
-        { path: '/side', component: Side },
-        { path: '/bottom', component: Bottom },
-        { path: '/env', component: Environment },
-        { path: '/walkSync', component: WalkSync }
+        { path: '/bottom1', component: Bottom1 },
+        { path: '/bottom2', component: Bottom2 },
+        { path: '/side1', component: Side1 },
+        { path: '/side2', component: Side2 },
+        { path: '/overall', component: Ball },
+        { path: '/side2', component: Side2 },
+        { path: '/env', component: Environment }
       ]
     }
   ]

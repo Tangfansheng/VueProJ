@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import EZUIKitJs from './EZUIKitJs_Side.vue'
+import EZUIKitJs from './EZUIKitJs_2.vue'
 
 export default {
   name: 'App',
